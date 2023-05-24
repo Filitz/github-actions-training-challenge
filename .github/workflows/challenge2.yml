@@ -2,14 +2,15 @@ name: challenge2
 
 on: push
 
+env:
+  ARTIFACT_NAME: my_artifact
+
 jobs:
-    job1:
-        name: Checkout
+    main:
+        name: Checkout & Upload
         runs-on: ubuntu-latest
         steps:
         - uses: actions/checkout@v3
-          env:
-            ARTIFACT_NAME: "CHALLENGE_ARTIFACT"
 
 
     job2:
