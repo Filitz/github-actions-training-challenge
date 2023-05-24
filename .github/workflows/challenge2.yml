@@ -1,0 +1,22 @@
+name: challenge2
+
+on: push
+
+jobs:
+    job1:
+        name: Checkout
+        runs-on: ubuntu-latest
+        steps:
+        - uses: actions/checkout@v3
+          env:
+            ARTIFACT_NAME: "CHALLENGE_ARTIFACT"
+
+
+    job2:
+        name: Upload Artifact
+        runs-on: ubuntu-latest
+        steps:
+        - uses: actions/upload-artifacts@v3
+          with:
+            name: ${{ ARTIFACT_NAME }}
+            path: ./
